@@ -1,0 +1,106 @@
+<table mat-table [dataSource]="products" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- PRODUCTOCODPROVEEDOR Column -->
+    <ng-container matColumnDef="PRODUCTOCODPROVEEDOR">
+      <th mat-header-cell *matHeaderCellDef> Cod. Prov. </th>
+      <td mat-cell *matCellDef="let element"> {{element.PRODUCTOCODPROVEEDOR}} </td>
+    </ng-container>
+
+    <!-- PRODUCTONOMBRE Column -->
+    <ng-container matColumnDef="PRODUCTONOMBRE">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTONOMBRE}} </td>
+      </ng-container>
+
+      <!-- PRODUCTOCODEQUIVALENTE Column -->
+    <ng-container matColumnDef="PRODUCTOCODEQUIVALENTE">
+        <th mat-header-cell *matHeaderCellDef> Cod. Equiv. </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTOCODEQUIVALENTE}} </td>
+      </ng-container>
+
+      <!-- PRODUCTODISTRIBCOD Column -->
+    <ng-container matColumnDef="PRODUCTODISTRIBCOD">
+        <th mat-header-cell *matHeaderCellDef> Cod. Dist. </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTODISTRIBCOD}} </td>
+      </ng-container>
+
+      <!-- PROVEEDORID Column -->
+    <ng-container matColumnDef="PROVEEDORID">
+        <th mat-header-cell *matHeaderCellDef> Proveedor. </th>
+        <td mat-cell *matCellDef="let element"> {{ element.PROVEEDORID == 5000 ? "UNILEVER" : "RESERVADO" }} </td>
+      </ng-container>
+
+      <!-- PRODUCTOACTIVO Column 6 -->
+    <ng-container matColumnDef="PRODUCTOACTIVO">
+        <th mat-header-cell *matHeaderCellDef> Estado </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTOACTIVO == "s" ? 'true' : 'false'}} </td>
+      </ng-container>
+
+      <!-- ProductoTipo Column 7 -->
+    <ng-container matColumnDef="ProductoTipo">
+        <th mat-header-cell *matHeaderCellDef> Tipo </th>
+        <td mat-cell *matCellDef="let element"> {{element.ProductoTipo == "S" ? 'Simple' : element.ProductoTipo == "T" ? 'Custom' : 'Combo Abierto' }} </td>
+      </ng-container>
+
+      <!-- Rest Column 8-->
+    <ng-container matColumnDef="Rest">
+        <th mat-header-cell *matHeaderCellDef> Rest </th>
+        <td mat-cell *matCellDef="let element"> “desmarcado” </td>
+      </ng-container>
+
+      <!-- Negocio Column -->
+    <ng-container matColumnDef="Negocio">
+        <th mat-header-cell *matHeaderCellDef> Negocio </th>
+        <td mat-cell *matCellDef="let element"> –SIN DEFINIR </td>
+      </ng-container>
+
+      <!-- Marca Column -->
+    <ng-container matColumnDef="Marca">
+        <th mat-header-cell *matHeaderCellDef> Marca </th>
+        <td mat-cell *matCellDef="let element"> –SIN DEFINIR </td>
+      </ng-container>
+
+      <!-- Categoría Column -->
+    <ng-container matColumnDef="Categoria">
+        <th mat-header-cell *matHeaderCellDef> Categoría </th>
+        <td mat-cell *matCellDef="let element"> –SIN DEFINIR </td>
+      </ng-container>
+
+    <!-- Línea Column -->
+    <ng-container matColumnDef="Linea">
+        <th mat-header-cell *matHeaderCellDef> Línea </th>
+        <td mat-cell *matCellDef="let element"> –SIN DEFINIR </td>
+      </ng-container>
+      
+      <!-- Piso Column -->
+    <ng-container matColumnDef="Piso">
+        <th mat-header-cell *matHeaderCellDef> Piso </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTOCNTPISO}} </td>
+      </ng-container>
+
+      <!-- Pallet Column -->
+    <ng-container matColumnDef="Pallet">
+        <th mat-header-cell *matHeaderCellDef> Pallet </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTOCNTPALET}} </td>
+      </ng-container>
+
+      <!-- F. Ingreso Column -->
+    <ng-container matColumnDef="FecIngreso">
+        <th mat-header-cell *matHeaderCellDef> F. Ingreso </th>
+        <td mat-cell *matCellDef="let element"> {{element.PRODUCTODTINS}} </td>
+      </ng-container>
+
+      <!-- Dto Column -->
+    <ng-container matColumnDef="Dto">
+        <th mat-header-cell *matHeaderCellDef> Dto </th>
+        <td mat-cell *matCellDef="let element"> “0.00” </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  
+  
